@@ -1,0 +1,53 @@
+.how-to__wrap {
+  padding:50px 0;
+}
+
+
+//side-by-side items
+ol.how-to__items {
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  margin:50px auto;
+  
+}
+
+.how-to__item {
+  position:relative;
+  //flex:1 0 auto;
+  
+  //Numbers
+  &::before {
+    position:relative;
+    color: $color--red;
+    font-size:150px;
+    font-weight:500;
+  }
+
+  &:nth-child(1)::before {
+    content: '01';
+  }
+
+  &:nth-child(2)::before {
+    content: '02';
+  }
+
+  &:nth-child(3)::before {
+    content: '03';
+  }
+
+  //Actual text
+  &>div {
+    position:absolute;
+    width:75%;
+    top:50%;
+    left:0;
+    text-align:left;
+    text-transform:capitalize;
+    transform:translateY(-50%);
+    font-size:15px;
+    font-weight:400;
+    border-bottom:1px solid $color--black;
+    padding:.25em;
+  }
+}

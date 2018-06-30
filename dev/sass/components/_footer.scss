@@ -1,0 +1,76 @@
+.site-footer {
+  margin-top:600px;
+  border-top:1px solid $color--gray;
+}
+
+.main-footer {
+    padding:55px 0 50px;
+
+    h2 {
+      font-size:18px;
+      padding-bottom:30px;
+    }
+
+    h3 {
+      font-size:15px;
+      font-weight:300;
+      padding-bottom:30px;
+    }
+
+    li {
+      font-size:15px;
+      padding-bottom:1em;
+    }
+
+    .signup {
+      input {
+        font-size:15px;
+        padding:.75em;
+        margin-right:.5em;
+        width:285px;
+        color:$color__copy--gray;
+        font-family:$juice-fontstack;
+        border:1px solid $color--gray;
+      }
+
+      button {
+        cursor:pointer;
+        padding-top:.75em;
+        padding-bottom:.75em;
+      }
+    }
+}
+
+
+.sub-footer {
+  background-color:$color--lt-gray;
+  border-top:1px solid $color--gray;
+  color:$color__copy--gray;
+  font-size:13px;
+  font-weight:300;
+  padding:25px 0;
+
+
+}
+
+.sub-footer__right {
+  ul {
+    display:flex;
+    align-items:center;
+    justify-content:right;    
+  }
+
+  li {
+    margin-left:3em;
+  }
+
+  a {
+    color:$color__copy--gray;
+    &:hover,
+    &:focus {
+      color:$color--red;
+    }
+  }
+  
+}
+

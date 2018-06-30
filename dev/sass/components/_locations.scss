@@ -1,0 +1,85 @@
+.locations__wrap {
+  padding:50px 0;
+
+  h2 {
+    padding-bottom:50px;
+  }
+}
+
+.locations {
+  padding:50px 0;
+}
+
+.location {
+  text-align:left;
+
+  h3 {
+    font-size:18px;
+    font-weight:500;
+    color:$color--red;
+    margin-bottom:.5em;
+  }
+
+  ul {
+    font-size:15px;
+    font-weight:300;
+
+    li {
+      padding-bottom:.25em;
+    }
+  }
+}
+
+.location__link {
+  display:block;
+  margin-bottom:30px;
+  border:1px solid transparent;
+  position:relative;
+
+  &::before,
+  &::after {
+    position:absolute;
+    display:block;
+    content:'';
+    opacity:0;
+    transition:opacity 250ms ease;
+  }
+
+  &::before {
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(255,255,255,0.8);
+
+  }
+
+  &::after {
+    position:absolute;
+    content:"View Store Details";
+    text-transform:uppercase;
+    top:50%;
+    left:50%;
+    font-size:15px;
+    text-align:center;
+    width:100%;
+    transform:translate(-50%, -50%);
+    color:$color--red;
+  }
+
+
+
+  &:hover,
+  &:focus {
+    border:1px solid $color--red;
+
+    &::before,
+    &::after {
+      opacity:1;
+    }
+  }
+
+  img {
+    width:100%;
+  }
+}

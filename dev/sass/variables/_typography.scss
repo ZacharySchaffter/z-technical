@@ -1,0 +1,19 @@
+ //Import Typekit Fonts
+ @import url('https://use.typekit.net/kzx1nxs.css');
+
+$juice-fontstack : 'urw-din', sans-serif;
+
+body {
+  font-family: $juice-fontstack;
+  color:$color--black;
+ }
+
+.text-center {
+  text-align:center;
+}
+
+p {
+  line-height:1.4;
+  font-weight:300;
+  font-size:15px;
+}

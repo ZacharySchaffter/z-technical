@@ -1,0 +1,62 @@
+.products__wrap {
+  padding:50px 0;
+}
+
+.products {
+  padding:50px 0;
+}
+
+.product__link {
+  display:block;
+  cursor:pointer;
+  border:1px solid transparent;
+  position:relative;
+  padding:0;
+
+
+  &::before,
+  &::after {
+    position:absolute;
+    display:block;
+    content:'';
+    opacity:0;
+    transition:opacity 250ms ease;
+  }
+
+  &::before {
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(255,255,255,0.8);
+
+  }
+
+  &::after {
+    position:absolute;
+    content:"View Milks Menu";
+    text-transform:uppercase;
+    top:50%;
+    left:50%;
+    font-size:15px;
+    text-align:center;
+    transform:translate(-50%);
+    color:$color--red;
+  }
+
+
+
+  &:hover,
+  &:focus {
+    border:1px solid $color--red;
+
+    &::before,
+    &::after {
+      opacity:1;
+    }
+  }
+
+  img {
+    width:100%;
+  }
+}

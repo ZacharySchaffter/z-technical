@@ -1,0 +1,7 @@
+.DS_Store
+.babelrc
+mockups/
+zehner-test.sublime*
+thumbs.db
+*.log
+node_modules/

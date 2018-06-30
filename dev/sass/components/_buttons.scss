@@ -1,0 +1,28 @@
+.btn-primary {
+  display:inline-block;
+  padding:1em 3em;
+  font-weight: 300;
+  font-size:15px;
+  color: $color--red;
+  border:1px solid $color--red;
+  background-color:transparent;
+  transition:background-color 250ms ease;
+  text-transform:uppercase;
+  
+
+  &:focus,
+  &:hover {
+    background-color: $color--red;
+    color: #fff;
+    font-weight:700;
+  }
+
+  &--solid {
+    background-color:$color--red;
+
+    &:focus,
+    &:hover {
+      background-color:lighten($color--red, 5%);
+    }
+  }
+}

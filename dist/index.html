@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta charset='utf-8'>
+        <title>Juice | Served Here</title>
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.typekit.net/kzx1nxs.css">
+    </head>
+    <body>
+    <header class="site-header">
+        <div class="topbar">
+            <div class="topbar__inner container">
+                <span>FREE SHIPPING ON YOUR FIRST ORDER AND ANY ORDER OVER $89 <a href="#">Click to see details</a></span>
+            </div>
+        </div>
+        <div class="site-header__main">
+            <div class="site-header__left">
+                <div id="login">
+                    <a href="#">Log in</a>
+                </div>
+                <nav id="siteNav1" class="site-header__nav">
+                    <ul>
+                        <li v-for="navItem in navMenu1"><a :href="navItem.url" @mouseover="navDrawer.open()">{{navItem.name}}</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div id="site-id" class="site-header__center">
+                <img src="./img/site-logo.jpg" alt="Juice Logo">
+                <h1>JUICE | <small>Served Here</small></h1>
+            </div>
+
+            <div class="site-header__right">
+                <nav id="siteNav2" class="site-header__nav">
+                    <ul>
+                        <li v-for="navItem in navMenu2"><a :href="navItem.url">{{navItem.name}}</a></li>
+                    </ul>
+                </nav>
+                
+                <div id="shopping-cart"><a href="#"><span class="fas fa-archive"></span> <span>({{totalItems}})</span></a></div>
+            </div>
+        
+            <div id="navDrawer" class="nav-drawer" v-show="navDrawer.isOpen" >
+                <div class="container-fluid" @mouseover="navDrawer.handleMouseover()" @mouseout="navDrawer.close(); navDrawer.handleMouseout();">
+                    <div class="row">
+                        <div class="col-sm-8 offset-sm-1">
+                            <div class="row">
+                                <div class="col-sm-3 nav-drawer__menu" v-for="menu in subMenu['shop-sub']">
+                                    <h3>{{menu.title}}</h3>
+                                    <ul>
+                                        <li v-for="menuLink in menu.links"><a :href="menuLink.url">{{menuLink.name}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero__wrap hero--01">
+        <div class="hero container">
+            <div class="row">
+                <div class="hero__content hero__content--left">
+                    <h2 class="hero__heading">We ship overnight nationwide</h2>
+                    <p class="hero__copy">We deliver Tuesday-Friday and offer the ability to schedule ahead.</p>
+                    <a href="#" class="hero__cta btn-primary">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="how-to__wrap container-fluid text-center">
+        <div class="row">
+            <div class="how-to__content col-sm-6 offset-sm-3">
+                <h3>You buy it by the box</h3>
+                <p>Choose 7-8 products of your liking and have it delivered to your door as often as you want. Your pick, every time.</p>
+            </div>
+        </div>
+            
+        <ol class="how-to__items col-sm-8 row">
+            <li class="how-to__item col-sm-6 offset-sm-3 col-md-3 offset-md-0">
+                <div>Build your box</div>
+            </li>
+            <li class="how-to__item col-sm-6 offset-sm-3 col-md-3 offset-md-0">
+                <div>Subscribe or don't</div>
+            </li>
+            <li class="how-to__item col-sm-6 offset-sm-3 col-md-3 offset-md-0">
+                <div>Pick a delivery day</div>
+            </li>
+        </ol>
+        <div class="text-center">
+            <a href="#" class="btn-primary">Shop the menu</a>
+        </div>
+        </div>
+    </div>
+
+    <div class="hero__wrap hero--02"> <!--TODO: Change to carousel-->
+        <div class="hero container-fluid">
+            <div class="row">
+                <div class="hero__content hero__content--center">
+                    <h2 class="hero__heading hero__heading--border">Drinks</h2>
+                    <h3 class="hero__sub-heading border-top">Juices</h3>
+                    <p class="hero__copy">Our juices are individually crafted to flush, detoxify, hydrate and strengthen the body.</p>
+                    <a href="#" class="hero__cta btn-primary">View Juice Menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products__wrap container-fluid text-center">
+        <div class="row justify-content-sm-center">
+            <div class="col-sm-12 col-md-4">
+                <h3 class="border-top">Pick your Pleasure</h3>
+                <p>Our products are nourishing, satiating and never cut with cheap fillers.</p>
+            </div>
+        </div>
+        
+
+        <div id="product-preview" class="products row">
+            <div v-for="product in products" class="product col-sm-6 col-md-3">
+                <a :href="product.url" class="product__link"><img :src="product.img.thumb" :alt="product.name+' thumbnail'"></a>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="#" class="hero__cta btn-primary">View Drinks Menu</a>
+        </div>
+        
+    </div>
+
+    <div class="hero__wrap hero--03"> <!--TODO: Change to carousel-->
+        <div class="hero container-fluid">
+            <div class="row">
+                <div class="hero__content hero__content--center">
+                    <h2 class="hero__heading hero__heading--border">Cleanse</h2>
+                    <h3 class="hero__sub-heading border-top">Drink yourself clean</h3>
+                    <p class="hero__copy">You like those cupcakes right? Sweet-spot for the whiskey neat? We get it. Time to cleanse.</p>
+                    <a href="#" class="hero__cta btn-primary">Shop Cleanses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="locations__wrap container-fluid text-center">
+        <h2>Locations</h2>
+        <div id="locations" class="row locations">
+            <div v-for="location in locations" class="location col-sm-6 col-md-3">
+                <a :href="location.url" class="location__link"><img :src="location.img.thumb" :alt="location.name +' thumbnail'"></a>
+
+                <h3>{{location.name}}</h3>
+                <ul v-if="location.storeHours">
+                    <li v-for="hours in location.storeHours">{{hours}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="container-fluid">
+            <div class="row justify-content-md-center main-footer">
+                <div class="col-sm-12 col-md-10">
+                    <div class="row">
+                        <div class="col-sm-6 signup">
+                            <h2>Let's be friends with benefits</h2>
+                            <form action="">
+                                <label for="email" class="sr-only">Email Address</label>
+                                <input id="email" type="text" placeholder="Email Address">
+                                <button class="btn-primary">OK!</button>
+                            </form>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h3>Company</h3>
+                                    <ul>
+                                        <li><a href="#">Find Stores</a></li>
+                                        <li><a href="#">Our Story</a></li>
+                                        <li><a href="#">Our Juice</a></li>
+                                        <li><a href="#">Our Farmers</a></li>
+                                        <li><a href="#">Our Commitment</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h3>Help</h3>
+                                    <ul>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Shipping</a></li>
+                                        <li><a href="#">Return Policy</a></li>
+                                        <li><a href="#">Gift Cards</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Legal</a></li> 
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h3>Social</h3>
+                                    <ul>
+                                        <li><a href="#">Instagram</a></li>
+                                        <li><a href="#">Facebook</a></li>
+                                        <li><a href="#">Twitter</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">&copy;2016 Juice Served Here. NEVER CONVENTIONAL. All Rights Reserved</div>
+                    <div class="col-sm-6 sub-footer__right">
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="./js/script.js"></script>
+    
+  </body>
+</html>
