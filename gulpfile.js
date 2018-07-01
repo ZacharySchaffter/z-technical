@@ -65,8 +65,8 @@ gulp.task('images', () =>
 
 gulp.task('watch', function() {
     browserSync.init({
-        proxy: "http://localhost:5001/",
-        port: 1919
+        proxy: "http://localhost:5001/", 
+        port: 1919,
     });
     gulp.watch([dev + '**/*.css', dev + '**/*.scss' ], ['css']);
     gulp.watch([dev + '**/*.js'], ['js']);

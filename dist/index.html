@@ -22,7 +22,7 @@
                 <div id="login">
                     <a href="#">Log in</a>
                 </div>
-                <nav id="siteNav1" class="site-header__nav">
+                <nav id="siteNav1" class="site-header__nav d-none d-md-block"> 
                     <ul>
                         <li v-for="navItem in navMenu1"><a :href="navItem.url" @mouseover="navDrawer.open()">{{navItem.name}}</a></li>
                     </ul>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="site-header__right">
-                <nav id="siteNav2" class="site-header__nav">
+                <nav id="siteNav2" class="site-header__nav d-none d-md-block">
                     <ul>
                         <li v-for="navItem in navMenu2"><a :href="navItem.url">{{navItem.name}}</a></li>
                     </ul>
@@ -47,7 +47,7 @@
             <div id="navDrawer" class="nav-drawer" v-show="navDrawer.isOpen" >
                 <div class="container-fluid" @mouseover="navDrawer.handleMouseover()" @mouseout="navDrawer.close(); navDrawer.handleMouseout();">
                     <div class="row">
-                        <div class="col-sm-8 offset-sm-1">
+                        <div class="col-8 offset-1">
                             <div class="row">
                                 <div class="col-sm-3 nav-drawer__menu" v-for="menu in subMenu['shop-sub']">
                                     <h3>{{menu.title}}</h3>
@@ -77,20 +77,20 @@
 
     <div class="how-to__wrap container-fluid text-center">
         <div class="row">
-            <div class="how-to__content col-sm-6 offset-sm-3">
+            <div class="how-to__content col-8 offset-2 col-sm-6 offset-sm-3">
                 <h3>You buy it by the box</h3>
                 <p>Choose 7-8 products of your liking and have it delivered to your door as often as you want. Your pick, every time.</p>
             </div>
         </div>
             
-        <ol class="how-to__items col-sm-8 row">
-            <li class="how-to__item col-sm-6 offset-sm-3 col-md-3 offset-md-0">
+        <ol class="how-to__items col-8 row">
+            <li class="how-to__item col-6 offset-3 col-md-3 offset-md-0">
                 <div>Build your box</div>
             </li>
-            <li class="how-to__item col-sm-6 offset-sm-3 col-md-3 offset-md-0">
+            <li class="how-to__item col-6 offset-3 col-md-3 offset-md-0">
                 <div>Subscribe or don't</div>
             </li>
-            <li class="how-to__item col-sm-6 offset-sm-3 col-md-3 offset-md-0">
+            <li class="how-to__item col-6 offset-3 col-md-3 offset-md-0">
                 <div>Pick a delivery day</div>
             </li>
         </ol>
@@ -102,7 +102,7 @@
 
     <div class="hero__wrap hero--02"> <!--TODO: Change to carousel-->
         <div class="hero container-fluid">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="hero__content hero__content--center">
                     <h2 class="hero__heading hero__heading--border">Drinks</h2>
                     <h3 class="hero__sub-heading border-top">Juices</h3>
@@ -115,15 +115,15 @@
 
     <div class="products__wrap container-fluid text-center">
         <div class="row justify-content-sm-center">
-            <div class="col-sm-12 col-md-4">
+            <div class="col-12 col-md-4">
                 <h3 class="border-top">Pick your Pleasure</h3>
                 <p>Our products are nourishing, satiating and never cut with cheap fillers.</p>
             </div>
         </div>
         
 
-        <div id="product-preview" class="products row">
-            <div v-for="product in products" class="product col-sm-6 col-md-3">
+        <div id="product-preview" class="products row justify-content-center">
+            <div v-for="product in products" class="product col-8 col-sm-6 col-md-3">
                 <a :href="product.url" class="product__link"><img :src="product.img.thumb" :alt="product.name+' thumbnail'"></a>
             </div>
         </div>
@@ -149,8 +149,8 @@
 
     <div class="locations__wrap container-fluid text-center">
         <h2>Locations</h2>
-        <div id="locations" class="row locations">
-            <div v-for="location in locations" class="location col-sm-6 col-md-3">
+        <div id="locations" class="row locations justify-content-center">
+            <div v-for="location in locations" class="location col-8 col-sm-6 col-md-3">
                 <a :href="location.url" class="location__link"><img :src="location.img.thumb" :alt="location.name +' thumbnail'"></a>
 
                 <h3>{{location.name}}</h3>
@@ -165,9 +165,9 @@
     <footer class="site-footer">
         <div class="container-fluid">
             <div class="row justify-content-md-center main-footer">
-                <div class="col-sm-12 col-md-10">
-                    <div class="row">
-                        <div class="col-sm-6 signup">
+                <div class="col-12 col-md-10">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6 signup">
                             <h2>Let's be friends with benefits</h2>
                             <form action="">
                                 <label for="email" class="sr-only">Email Address</label>
@@ -175,9 +175,9 @@
                                 <button class="btn-primary">OK!</button>
                             </form>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-4">
+                        <div class="col-12 col-md-6">
+                            <div class="row justify-content-center justify-content-sm-start">
+                                <div class="col-8 col-sm-6 col-md-4">
                                     <h3>Company</h3>
                                     <ul>
                                         <li><a href="#">Find Stores</a></li>
@@ -188,7 +188,7 @@
                                         <li><a href="#">Careers</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-8 col-sm-6 col-md-4">
                                     <h3>Help</h3>
                                     <ul>
                                         <li><a href="#">FAQ</a></li>
@@ -199,7 +199,7 @@
                                         <li><a href="#">Legal</a></li> 
                                     </ul>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-8 col-sm-6 col-md-4">
                                     <h3>Social</h3>
                                     <ul>
                                         <li><a href="#">Instagram</a></li>
@@ -217,8 +217,8 @@
         <div class="sub-footer">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6">&copy;2016 Juice Served Here. NEVER CONVENTIONAL. All Rights Reserved</div>
-                    <div class="col-sm-6 sub-footer__right">
+                    <div class="col-6">&copy;2016 Juice Served Here. NEVER CONVENTIONAL. All Rights Reserved</div>
+                    <div class="col-6 sub-footer__right">
                         <ul>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>

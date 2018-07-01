@@ -9,20 +9,30 @@
     h2 {
       font-size:18px;
       padding-bottom:30px;
+
+
     }
 
     h3 {
       font-size:15px;
       font-weight:300;
       padding-bottom:30px;
-    }
 
+      @media only screen and (max-width:750px) {
+        padding-bottom:15px;
+      }
+    }
+  
+    ul {
+      padding-bottom:30px;
+    }
     li {
       font-size:15px;
       padding-bottom:1em;
     }
 
     .signup {
+      padding-bottom:50px;
       input {
         font-size:15px;
         padding:.75em;
